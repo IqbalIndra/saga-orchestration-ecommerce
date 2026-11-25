@@ -1,0 +1,86 @@
+# ── Gradle ────────────────────────────────────────────────────────────────────
+.gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ── Maven ─────────────────────────────────────────────────────────────────────
+target/
+.mvn/timing.properties
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ── Java / JVM ────────────────────────────────────────────────────────────────
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+*.p12
+*.jks
+*.keystore
+*.truststore
+
+# ── Java crash dumps ──────────────────────────────────────────────────────────
+hs_err_pid*
+replay_pid*
+
+# ── Spring Boot ───────────────────────────────────────────────────────────────
+HELP.md
+application-local.properties
+application-local.yml
+application-secrets.properties
+application-secrets.yml
+
+# ── Test coverage ─────────────────────────────────────────────────────────────
+jacoco.exec
+.jacoco/
+
+# ── Frontend (Node/Vite) ──────────────────────────────────────────────────────
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+frontend/coverage/
+frontend/.vite/
+frontend/.eslintcache
+frontend/npm-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# ── Environment / Secrets ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets.yml
+secrets.properties
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.classpath
+.project
+.settings/
+
+# ── Kubernetes ────────────────────────────────────────────────────────────────
+k8s/secrets.yml
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+nohup.out
+*.pid
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Docker local overrides ────────────────────────────────────────────────────
+docker-compose.override.yml
+.claude/settings.local.json

@@ -1,0 +1,39 @@
+server:
+  port: 8081
+grpc:
+  server:
+    port: 9091
+    max-inbound-message-size: 4MB
+    reflection-enabled: true
+    shutdown-grace-period: 30s
+
+spring:
+  application:
+    name: inventory-service
+  threads:
+    virtual:
+      enabled: true
+  data:
+    mongodb:
+      uri: mongodb://root:Mongo2022!@localhost:27017/inventory?authSource=admin
+      authentication-database: admin
+      auto-index-creation: false
+  kafka:
+    bootstrap-servers: localhost:9092, localhost:9094, localhost:9096
+    consumer:
+      group-id: ${spring.application.name}
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+mongock:
+  migration-scan-package: com.ecommerce.saga.orchestration.inventory.adapter.out.persistence.migration
+  transaction-enabled: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 30
